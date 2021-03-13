@@ -1,7 +1,6 @@
 @import "../../assets/scss/index.scss";
 
 .day-card {
-  background-color: #CDDC39;
   width: 35rem;
 
   &__header-title {
@@ -30,4 +29,12 @@
 
 .subtitle-section {
   display: flex;
+}
+
+.primary-bg-color {
+  background-color: $primary;
+}
+
+.secondary-bg-color {
+  background-color: $secondary;
 }

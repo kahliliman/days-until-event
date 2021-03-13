@@ -1,18 +1,19 @@
+import classNames from 'classnames';
 import "./card.scss"
 
-const Card = () => {
+const Card = ({ name, date, category, daysLeft }) => {
   return (
-    <div className="day-card mt-3 p-3 rounded d-flex align-items-center justify-content-between">
+    <div className={classNames('day-card mt-3 p-3 rounded align-items-center justify-content-between', (category === 'Family Event') ? 'primary-bg-color' : 'secondary-bg-color', (daysLeft < 0 ? 'd-none' : 'd-flex'))}>
       <div>
         <h3 className="day-card__header-title">Days until</h3>
-        <h1 className="day-card__event-title">Cicilan terakhir</h1>
+        <h1 className="day-card__event-title">{name}</h1>
         <div className="d-flex">
-          <h5 className="day-card__subtitle mr-3">02-April-2021</h5>
-          <h5 className="day-card__subtitle font-italic">Family Event</h5>
+          <h5 className="day-card__subtitle mr-3">{date}</h5>
+          <h5 className="day-card__subtitle font-italic">{category}</h5>
         </div>
       </div>
-      <h5 className="day-card__days-text p-3 rounded">20</h5>
-    </div>
+      <h5 className="day-card__days-text p-3 rounded">{daysLeft}</h5>
+    </div >
   )
 }
 
