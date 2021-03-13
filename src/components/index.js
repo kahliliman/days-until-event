@@ -1,3 +1,4 @@
 import Card from "./card";
+import LoginCard from "./loginCard";
 
-export { Card };
+export { Card, LoginCard };
