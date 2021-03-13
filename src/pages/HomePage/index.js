@@ -6,8 +6,8 @@ import moment from "moment"
 
 class HomePage extends Component {
   state = {
-    events: data.sort(function (a, b) {
-      return new Date(a.date) - new Date(b.date);
+    events: data.sort((a, b) => {
+      return moment(a.date) - moment(b.date);
     })
   }
 
