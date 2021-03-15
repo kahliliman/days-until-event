@@ -22,6 +22,7 @@ class HomePage extends Component {
     return diffDate
   }
 
+
   render() {
 
     const events = (

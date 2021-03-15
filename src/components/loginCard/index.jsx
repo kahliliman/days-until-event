@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useAuth } from "../../context/authContext";
-import { useHistory } from "react-router-dom";
 import InputText from "../inputText";
 import Alert from "../alert";
-import "./loginCard.scss"
+import { useAuth } from "../../context/authContext";
+import { useHistory } from "react-router-dom";
+import "../../assets/scss/index.scss";
 
-const LoginCard = () => {
+export default function LoginCard() {
   const [error, setError] = useState("");
   const history = useHistory();
   const { loginEmailPassword } = useAuth();
@@ -29,42 +29,52 @@ const LoginCard = () => {
     }
   };
 
+  // const handleGoogleLogin = async () => {
+  //   try {
+  //     await loginWithGoogle();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   return (
     <>
       {error && <Alert type="danger" label={error} />}
-      <div className="d-flex flex-column align-items-center log-in-card p-3 rounded ">
-        <h1>Log In</h1>
-        <form className="d-flex flex-column">
-          <InputText
-            type="email"
-            label="Email"
-            placeholder="Enter your email"
-            defaultValue={email}
-            onChange={handleChange}
-            name="email"
-            grey
-            rounded
-          />
-          <InputText
-            type="password"
-            label="Password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={handleChange}
-            name="password"
-            grey
-            rounded
-          />
-          <InputText
-            type="submit"
-            defaultValue="Login"
-            onClick={handleLogin}
-            rounded
-          />
-        </form>
-      </div>
+      <InputText
+        type="email"
+        label="Email"
+        placeholder="Enter your email"
+        defaultValue={email}
+        onChange={handleChange}
+        name="email"
+        grey
+        rounded
+      />
+      <InputText
+        type="password"
+        label="Password"
+        placeholder="Enter your password"
+        value={password}
+        onChange={handleChange}
+        name="password"
+        grey
+        rounded
+      />
+      <InputText
+        type="submit"
+        defaultValue="Login"
+        onClick={handleLogin}
+        rounded
+      />
+      {/* <p className="text-center login--right__text">Or login with</p>
+      <InputText
+        onClick={handleGoogleLogin}
+        type="submit"
+        value="Google"
+        google
+        rounded
+        disabled
+      /> */}
     </>
-  )
+  );
 }
-
-export default LoginCard;

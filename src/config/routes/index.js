@@ -9,7 +9,7 @@ const Routes = () => {
     <Router>
       <Switch>
         <Route path="/login" component={LoginPage} />
-        <PrivateRoute path="/" component={HomePage} />
+        <PrivateRoute exact path="/" component={HomePage} />
       </Switch>
     </Router>
   );

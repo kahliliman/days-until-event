@@ -3,5 +3,5 @@ import LoginPage from "./LoginPage";
 
 export {
   HomePage,
-  LoginPage
+  LoginPage,
 };
