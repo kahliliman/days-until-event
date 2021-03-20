@@ -3,11 +3,12 @@ import { Card } from "../../components"
 import "../../assets/scss/index.scss"
 import data from "../../config/data/event.json"
 import moment from "moment"
+import app from "../../config/firebase"
 
 class HomePage extends Component {
   state = {
-    events: data.sort(function (a, b) {
-      return new Date(a.date) - new Date(b.date);
+    events: data.sort((a, b) => {
+      return moment(a.date) - moment(b.date);
     })
   }
 
@@ -21,6 +22,7 @@ class HomePage extends Component {
 
     return diffDate
   }
+
 
   render() {
 
@@ -42,12 +44,10 @@ class HomePage extends Component {
     return (
       <div className="d-flex flex-column align-items-center mt-3" >
         {events}
+        <button onClick={() => app.auth().signOut()}>Sign out</button>
       </div>
     )
   }
 }
-
-
-
 
 export default HomePage

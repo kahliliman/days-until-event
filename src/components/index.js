@@ -1,3 +1,6 @@
 import Card from "./card";
+import LoginCard from "./loginCard";
+import LogoutButton from "./logoutButton";
+import InputText from "./inputText";
 
-export { Card };
+export { Card, LoginCard, LogoutButton, InputText };
