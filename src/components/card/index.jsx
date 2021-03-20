@@ -8,8 +8,9 @@ const Card = ({ name, date, category, daysLeft }) => {
         <h3 className="day-card__header-title">Days until</h3>
         <h1 className="day-card__event-title">{name}</h1>
         <div className="d-flex">
-          <h5 className="day-card__subtitle mr-3">{date}</h5>
-          <h5 className="day-card__subtitle font-italic">{category}</h5>
+          <h6 className="day-card__subtitle mr-2">{date}</h6>
+          <h6 className="day-card__subtitle mr-2">•</h6>
+          <h6 className="day-card__subtitle font-italic">{category}</h6>
         </div>
       </div>
       <h5 className="day-card__days-text p-3 rounded">{daysLeft}</h5>
