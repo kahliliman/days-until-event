@@ -3,6 +3,7 @@ import { Card } from "../../components"
 import "../../assets/scss/index.scss"
 import data from "../../config/data/event.json"
 import moment from "moment"
+import app from "../../config/firebase"
 
 class HomePage extends Component {
   state = {
@@ -43,6 +44,7 @@ class HomePage extends Component {
     return (
       <div className="d-flex flex-column align-items-center mt-3" >
         {events}
+        <button onClick={() => app.auth().signOut()}>Sign out</button>
       </div>
     )
   }
