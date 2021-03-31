@@ -3,6 +3,7 @@ import { withRouter } from "react-router"
 import { AuthContext } from "../../context/authContext";
 import { Redirect } from "react-router-dom";
 import "../../assets/scss/index.scss";
+import "./loginCard.scss"
 import app from "../../config/firebase";
 
 const LoginCard = ({ history }) => {
@@ -38,20 +39,22 @@ const LoginCard = ({ history }) => {
   }
 
   return (
-    <div>
-      <h1>Log in</h1>
-      <form onSubmit={handleLogin}>
+    <>
+    <div className="d-flex flex-column login-card">
+      <h1 className="text-center font-weight-bold login--right__title">Login</h1>
+      <form onSubmit={handleLogin} className="d-flex flex-column form">
         <label>
           Email
-          <input onChange={handleChange} name="email" type="email" placeholder="Email" />
         </label>
+          <input onChange={handleChange} name="email" type="email"  />
         <label>
           Password
-          <input onChange={handleChange} name="password" type="password" placeholder="Password" />
         </label>
-        <button type="submit">Log in</button>
+          <input onChange={handleChange} name="password" type="password"  />
+        <button type="submit" className="btn btn-primary mt-3">Log in</button>
       </form>
     </div>
+    </>
   );
 }
 
